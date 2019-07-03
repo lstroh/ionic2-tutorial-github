@@ -1,0 +1,27 @@
+  <ion-header>  
+    <ion-toolbar>
+      <ion-title>
+        GitHub
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>  
+      <ion-list inset>
+          <ion-item>
+              <ion-label>Username</ion-label>
+              <ion-input [(ngModel)]="username" type="text"></ion-input>
+          </ion-item>
+      </ion-list>
+      <div padding>
+          <ion-button block (click)="getRepos()" color="primary">Search</ion-button>
+      </div>
+      <ion-card *ngFor="let repo of foundRepos">
+          <ion-card-header>
+              {{ repo.name }}
+          </ion-card-header>
+          <ion-card-content>
+              {{ repo.description }}
+          </ion-card-content>
+      </ion-card>
+  </ion-content> 
